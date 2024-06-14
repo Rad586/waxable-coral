@@ -1,5 +1,4 @@
 plugins {
-    id 'maven-publish'
     id "shared.conventions"
     alias(libs.plugins.mdg)
     alias(libs.plugins.archloom)
