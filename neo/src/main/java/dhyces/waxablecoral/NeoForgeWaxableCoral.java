@@ -17,15 +17,13 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.common.ToolActions;
 import net.neoforged.neoforge.common.util.MutableHashedLinkedMap;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import java.util.function.Supplier;
 
 @Mod(WaxableCoral.MODID)
 public class NeoForgeWaxableCoral {
@@ -53,30 +51,25 @@ public class NeoForgeWaxableCoral {
 
     private void addTabs(final BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            var tabItems = event.getEntries();
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_HORN_CORAL_FAN.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_HORN_CORAL_FAN);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_FIRE_CORAL_FAN);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_BUBBLE_CORAL_FAN);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_BRAIN_CORAL_FAN);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_TUBE_CORAL_FAN);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_FIRE_CORAL_FAN.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_BUBBLE_CORAL_FAN.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_BRAIN_CORAL_FAN.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_TUBE_CORAL_FAN.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_HORN_CORAL);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_FIRE_CORAL);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_BUBBLE_CORAL);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_BRAIN_CORAL);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_TUBE_CORAL);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_HORN_CORAL.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_FIRE_CORAL.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_BUBBLE_CORAL.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_BRAIN_CORAL.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_TUBE_CORAL.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_HORN_CORAL_BLOCK);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_FIRE_CORAL_BLOCK);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_BUBBLE_CORAL_BLOCK);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_BRAIN_CORAL_BLOCK);
-            putAfterFullVis(tabItems, Items.DEAD_HORN_CORAL_FAN, Register.WAXED_TUBE_CORAL_BLOCK);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_HORN_CORAL_BLOCK.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_FIRE_CORAL_BLOCK.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_BUBBLE_CORAL_BLOCK.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_BRAIN_CORAL_BLOCK.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Items.DEAD_HORN_CORAL_FAN.getDefaultInstance(), Register.WAXED_TUBE_CORAL_BLOCK.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
-    }
-
-    private static void putAfterFullVis(MutableHashedLinkedMap<ItemStack, CreativeModeTab.TabVisibility> tabItems, Item item, Holder<Block> regObj) {
-        tabItems.putAfter(item.getDefaultInstance(), regObj.value().asItem().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
     }
 
     private void onBlockRightClick(final PlayerInteractEvent.RightClickBlock event) {
@@ -106,7 +99,7 @@ public class NeoForgeWaxableCoral {
     }
 
     private void onAxeWaxOffUsed(final BlockEvent.BlockToolModificationEvent event) {
-        if (event.getToolAction().equals(ToolActions.AXE_WAX_OFF)) {
+        if (event.getItemAbility().equals(ItemAbilities.AXE_WAX_OFF)) {
             BlockState state = event.getLevel().getBlockState(event.getContext().getClickedPos());
             Block unwaxed = WaxableCoralAPI.getUnwaxed(state.getBlock());
             if (unwaxed != null) {
