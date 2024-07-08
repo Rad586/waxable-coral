@@ -3,24 +3,24 @@ minecraft_release = "1.21"
 minecraft_range = "[1.21,1.22)"
 publish_range = "1.21"
 
-parchment_release = "2024.06.02"
-parchment_minecraft = "1.20.6"
+parchment_release = "2024.07.07"
+parchment_minecraft = "1.21"
 
 javafml_range = "[3,)"
-neoforge_release = "21.0.1-beta"
+neoforge_release = "21.0.76-beta"
 neoforge_range = "[21.0-beta,22.0)"
 
 fabric_loader = "0.15.11"
-fabric_api_release = "0.100.1+1.21"
+fabric_api_release = "0.100.6+1.21"
 fabric_api_range = "[0.100.0,)"
 
 mixinextras = "0.3.6"
 
 jetbrains_annotations = "24.1.0"
 
-mdg_release = "2.0.0-beta.28"
+mdg_release = "2.0.0-beta.30"
 regutils = "1.20.2-0.2.1"
-archloom = "1.6.397"
+archloom = "1.7.405"
 
 curseforgegradle = "1.1.18"
 minotaur = "2.+"
