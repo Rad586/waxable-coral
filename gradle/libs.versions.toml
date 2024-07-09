@@ -8,7 +8,7 @@ parchment_minecraft = "1.21"
 
 javafml_range = "[3,)"
 neoforge_release = "21.0.76-beta"
-neoforge_range = "[21.0-beta,22.0)"
+neoforge_range = "[21.0.66-beta,22.0)"
 
 fabric_loader = "0.15.11"
 fabric_api_release = "0.100.6+1.21"
